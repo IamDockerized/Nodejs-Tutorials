@@ -1,0 +1,70 @@
+1. Module - encapsulated and reusable chunk of code that has its own context.
+2. In node.js each file is treated as a separate module
+
+3. Types of modules
+- Local modules - that we create in our app
+- Built-in modules - that node.js ships with out of the box
+- Third  party modules - written by other developers that we can use
+
+4. Common JS - standard that states how a module should be structured and shared
+
+5. node.js adopted Common JS when it started out
+
+6. Module Scope
+- Each loaded module is wrapped and file provides private scoping of code
+
+7. Module Wrapper
+- every module in node.js gets wrapped in an IIFE before being loaded
+- IIFE wraps every module contains 5 parameters
+
+(function(exports, require, module, __filename, __dirname){
+const superHero = 'Batman';
+console,.log(superHero);
+})
+
+8. Module Caching - every module is loaded and cached (remembered) for subsequent use
+- to avoid troubles when use module.exports = class
+
+9. Import Export patterns
+
+10. Module.exports vs Exports
+Exports its only an reference to module.exports
+- always better module.exports instead of exports
+- when you assign one object to another both objects point to the same place in the memory
+- when modyfying second object => modyfying first one
+
+11. In a commonJS
+- each file is treated as a module
+- variables, functions, classes, etc are not accessible to other files by default
+- explicitly tell the module system which parts of your code should be exported via module.exports or exports
+- to import code into a file, use the require() function
+
+12. ES modules - new module system added to node.js
+- why we need another system?
+- ES2015 - stnadarized module system for JS as part of language called EcmaScript Modules or ES Modules or ESM.
+- ESM was fully implemented in node 14 (2020)
+- With ESM instead of module.exports we use export keyword
+- Export can be default or named
+- We import the exported variables of functions with import
+
+13. Default export - assign any name while importing
+
+14. Named export - the import name must be the same
+
+15. Importing JSON and Watch Mode
+- Watch Mode implemented in node v18
+- Watch Mode restart the process if there's a change in the code (terminal: node --watch filename)
+
+16. Buil-in(core) modules
+- path
+- events
+- fs
+- stream
+- http
+
+17. 
+
+
+
+
+
